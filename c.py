@@ -5,7 +5,7 @@ from binance_f.model.constant import *
 import json
 import requests
 
-request_client = RequestClient(api_key="api_key ", secret_key="api_secret")
+request_client = RequestClient(api_key="iWNNGtIL103fyHuWi5G6WAyaH1rLj6fZt0iteNpwXDMYAqAyeaFn2OxOZHllb885", secret_key="Ub2W4UgRQ9QMh8MXfkeGAyU5O2mw2zGuCMVQbar9wGZJhJHp8SccAlAfg96ADm09")
 
 acc = request_client.get_account_information()
 
@@ -22,6 +22,8 @@ if (bs == 1):
         coin = str(input("\nInput your COIN to BUY: "))
         qty = float(input("\nInput your QUANTITY to BUY: "))
         price = float(input("\nInput PRICE: "))
+        lev = str(input("\nInput LEVERAGE: "))
+        leverage = request_client.change_initial_leverage(symbol=coin, leverage=lev)
         conf = str(input("\nPLACE ORDER? ( Y / CTRL^C ): "))
         if (conf == "Y" or "y"):
             print("\nPlacing Order...")
